@@ -27,9 +27,7 @@ The implementation is **array-based** for memory efficiency and includes **compr
 ### **Performance Results**
 - **JMH Results:** `docs/performance-plots/jmh_results.xlsx` *(Excel file with microbenchmark data)*
 - **CLI Results:** `docs/performance-plots/benchmark_all.csv` *(CSV with time and memory data)*
-- **Plot:** `docs/performance-plots/time_vs_size.png` *(time vs. size visualization)*
 
-- **Plot Script:** `plot_benchmarks.py` *(Python script to generate the plot)*
 
 ---
 
@@ -79,12 +77,6 @@ java -jar target/jmh-benchmarks.jar com.saniya.algorithms.MaxHeapBenchmark
 ```
 - Copy the output to docs/performance-plots/jmh_results.xlsx using Excel.
 
-## Generate Performance Plot
-- Create a time vs. input size plot (logarithmic scale) from benchmark_all.csv:
-``` bash
-python plot_benchmarks.py
-```
-- Output: docs/performance-plots/time_vs_size.png
 
 ## Input Types and Sizes
 - Input Types: random, sorted, reverse, nearly
