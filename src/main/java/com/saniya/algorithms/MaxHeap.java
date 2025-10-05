@@ -65,21 +65,22 @@ public class MaxHeap {
     }
 
     private void heapify(int i) {
-        int largest = i;
-        int left = 2 * i + 1;
-        int right = 2 * i + 2;
-        tracker.incrementArrayAccesses(3);
-        if (left < size) {
-            tracker.incrementComparisons();
-            if (heap[left] > heap[largest]) largest = left;
-        }
-        if (right < size) {
-            tracker.incrementComparisons();
-            if (heap[right] > heap[largest]) largest = right;
-        }
-        if (largest != i) {
+        while (true) {
+            int largest = i;
+            int left = 2 * i + 1;
+            int right = 2 * i + 2;
+            tracker.incrementArrayAccesses(3);
+            if (left < size) {
+                tracker.incrementComparisons();
+                if (heap[left] > heap[largest]) largest = left;
+            }
+            if (right < size) {
+                tracker.incrementComparisons();
+                if (heap[right] > heap[largest]) largest = right;
+            }
+            if (largest == i) break;
             swap(i, largest);
-            heapify(largest);
+            i = largest;
         }
     }
 
